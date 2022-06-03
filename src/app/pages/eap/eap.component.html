@@ -1,0 +1,15 @@
+<dx-diagram
+  [readOnly]="true"
+  [viewToolbar]="{
+    visible : true
+  }"
+  pageOrientation="landscape"
+  autoZoomMode="fitWidth">
+  <dxo-nodes
+    [dataSource]="dataSource"
+    textExpr="Title"
+    itemsExpr="Items"
+    >
+      <dxo-auto-layout type="tree"></dxo-auto-layout>
+  </dxo-nodes>
+</dx-diagram>

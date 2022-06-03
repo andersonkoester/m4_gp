@@ -1,47 +1,27 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginFormComponent, ResetPasswordFormComponent, CreateAccountFormComponent, ChangePasswordFormComponent } from './shared/components';
-import { AuthGuardService } from './shared/services';
 import { HomeComponent } from './pages/home/home.component';
-import { ProfileComponent } from './pages/profile/profile.component';
-import { TasksComponent } from './pages/tasks/tasks.component';
-import { DxDataGridModule, DxFormModule } from 'devextreme-angular';
+import { DxDiagramModule, DxGanttModule } from 'devextreme-angular';
+import { EAPComponent } from './pages/eap/eap.component';
+import { CronogramaComponent } from './pages/cronograma/cronograma.component';
+import { OrcamentoComponent } from './pages/orcamento/orcamento.component';
 
 const routes: Routes = [
-  {
-    path: 'tasks',
-    component: TasksComponent,
-    canActivate: [ AuthGuardService ]
-  },
-  {
-    path: 'profile',
-    component: ProfileComponent,
-    canActivate: [ AuthGuardService ]
-  },
-  {
+ {
     path: 'home',
-    component: HomeComponent,
-    canActivate: [ AuthGuardService ]
+    component: HomeComponent
   },
   {
-    path: 'login-form',
-    component: LoginFormComponent,
-    canActivate: [ AuthGuardService ]
+    path: 'eap',
+    component: EAPComponent
   },
   {
-    path: 'reset-password',
-    component: ResetPasswordFormComponent,
-    canActivate: [ AuthGuardService ]
+    path: 'cronograma',
+    component: CronogramaComponent
   },
   {
-    path: 'create-account',
-    component: CreateAccountFormComponent,
-    canActivate: [ AuthGuardService ]
-  },
-  {
-    path: 'change-password/:recoveryCode',
-    component: ChangePasswordFormComponent,
-    canActivate: [ AuthGuardService ]
+    path: 'orcamento',
+    component: OrcamentoComponent
   },
   {
     path: '**',
@@ -50,9 +30,18 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true }), DxDataGridModule, DxFormModule],
-  providers: [AuthGuardService],
+  imports: [
+    RouterModule.forRoot(routes, { useHash: true }),
+    DxDiagramModule,
+    DxGanttModule
+  ],
+  providers: [],
   exports: [RouterModule],
-  declarations: [HomeComponent, ProfileComponent, TasksComponent]
+  declarations: [
+    HomeComponent,
+    EAPComponent,
+    CronogramaComponent,
+    OrcamentoComponent
+  ]
 })
 export class AppRoutingModule { }

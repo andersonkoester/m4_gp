@@ -1,11 +1,11 @@
 import { Component, OnInit, NgModule, Input, ViewChild } from '@angular/core';
 import { SideNavigationMenuModule, HeaderModule } from '../../shared/components';
-import { ScreenService } from '../../shared/services';
 import { DxDrawerModule } from 'devextreme-angular/ui/drawer';
 import { DxScrollViewModule, DxScrollViewComponent } from 'devextreme-angular/ui/scroll-view';
 import { CommonModule } from '@angular/common';
 
 import { Router, NavigationEnd } from '@angular/router';
+import { DxDiagramModule, DxGanttModule } from 'devextreme-angular';
 
 @Component({
   selector: 'app-side-nav-outer-toolbar',
@@ -27,10 +27,10 @@ export class SideNavOuterToolbarComponent implements OnInit {
   minMenuSize = 0;
   shaderEnabled = false;
 
-  constructor(private screen: ScreenService, private router: Router) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
-    this.menuOpened = this.screen.sizes['screen-large'];
+    this.menuOpened = true;
 
     this.router.events.subscribe(val => {
       if (val instanceof NavigationEnd) {
@@ -38,19 +38,15 @@ export class SideNavOuterToolbarComponent implements OnInit {
       }
     });
 
-    this.screen.changed.subscribe(() => this.updateDrawer());
-
     this.updateDrawer();
   }
 
   updateDrawer() {
-    const isXSmall = this.screen.sizes['screen-x-small'];
-    const isLarge = this.screen.sizes['screen-large'];
 
-    this.menuMode = isLarge ? 'shrink' : 'overlap';
-    this.menuRevealMode = isXSmall ? 'slide' : 'expand';
-    this.minMenuSize = isXSmall ? 0 : 60;
-    this.shaderEnabled = !isLarge;
+    this.menuMode = 'shrink';
+    this.menuRevealMode = 'slide';
+    this.minMenuSize = 60;
+    this.shaderEnabled = false;
   }
 
   get hideMenuAfterNavigation() {
@@ -92,7 +88,13 @@ export class SideNavOuterToolbarComponent implements OnInit {
 }
 
 @NgModule({
-  imports: [ SideNavigationMenuModule, DxDrawerModule, HeaderModule, DxScrollViewModule, CommonModule ],
+  imports: [
+    SideNavigationMenuModule,
+    DxDrawerModule,
+    HeaderModule,
+    DxScrollViewModule,
+    CommonModule
+  ],
   exports: [ SideNavOuterToolbarComponent ],
   declarations: [ SideNavOuterToolbarComponent ]
 })
