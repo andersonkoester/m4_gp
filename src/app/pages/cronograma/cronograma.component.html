@@ -1,14 +1,19 @@
 <!-- <ng-template #container></ng-template> -->
-<dx-gantt #ganttComponent taskListWidth="500" scaleType="weeks" height="700">
+<dx-gantt
+  #ganttComponent
+  taskListWidth="600"
+  scaleType="weeks"
+  [allowSelection]="false">
   <dxo-tasks
     [dataSource]="tasks"
     keyExpr="id"
     parentIdExpr="parentTaskId"
     titleExpr="taskTitle"
     startExpr="startDate"
-    endExpr="endDate"></dxo-tasks>
+    endExpr="endDate"
+    colorExpr="taskColor"></dxo-tasks>
 
-  <dxo-dependencies
+  <!-- <dxo-dependencies
     [dataSource]="dependencies"
     keyExpr="id"
     typeExpr="dependencyType"
@@ -22,11 +27,11 @@
     [dataSource]="resourceAssignments"
     keyExpr="id"
     resourceIdExpr="resourceId"
-    taskIdExpr="taskId"></dxo-resource-assignments>
+    taskIdExpr="taskId"></dxo-resource-assignments> -->
 
-  <dxi-column dataField="title" caption="Tarefa" [width]="300"></dxi-column>
-  <dxi-column dataField="start" caption="Inicio" dataType="date"></dxi-column>
-  <dxi-column dataField="end" caption="Fim" dataType="date"></dxi-column>
+  <dxi-column dataField="title" caption="Tarefa"></dxi-column>
+  <dxi-column dataField="start" caption="Inicio" dataType="date" [width]="150"></dxi-column>
+  <dxi-column dataField="end" caption="Fim" dataType="date" [width]="150"></dxi-column>
 
   <dxo-validation [autoUpdateParentTasks]="false"></dxo-validation>
   <dxo-editing [enabled]="false"></dxo-editing>

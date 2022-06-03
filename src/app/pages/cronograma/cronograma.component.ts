@@ -8,6 +8,7 @@ export class Task {
   start: Date;
   end: Date;
   progress: number;
+  taskColor: string;
 }
 
 @Component({
@@ -24,106 +25,128 @@ export class CronogramaComponent implements OnInit {
       {
         id: 1,
         parentId: -1,
-        title: 'Gestão do Projeto',
-        start: new Date('2022-05-30'),
-        end: new Date('2022-06-04'),
+        title: 'E-Commerce',
+        start: new Date('05/30/2022'),
+        end: new Date('06/04/2022'),
         progress: 0,
+        taskColor: 'red'
       },
       {
         id: 2,
-        parentId: -1,
+        parentId: 1,
+        title: 'Gestão do Projeto',
+        start: new Date('05/30/2022'),
+        end: new Date('06/04/2022'),
+        progress: 0,
+        taskColor: 'red'
+      },
+      {
+        id: 3,
+        parentId: 1,
         title: 'Requisitos',
         start: new Date('2022-05-30'),
         end: new Date('2022-06-04'),
         progress: 0,
+        taskColor: 'red'
       },
       {
-        id: 3,
-        parentId: 2,
+        id: 4,
+        parentId: 3,
         title: 'Levantamento de Requisitos',
         start: new Date('2022-05-30'),
         end: new Date('2022-06-04'),
         progress: 0,
+        taskColor: 'red'
       },
       {
-        id: 4,
-        parentId: 2,
+        id: 5,
+        parentId: 3,
         title: 'Análise de Requisitos',
         start: new Date('2022-05-30'),
         end: new Date('2022-06-04'),
         progress: 0,
+        taskColor: 'red'
       },
       {
-        id: 5,
-        parentId: 2,
+        id: 6,
+        parentId: 3,
         title: 'Documentação de Requisitos',
         start: new Date('2022-05-30'),
         end: new Date('2022-06-04'),
         progress: 0,
+        taskColor: 'red'
       },
       {
-        id: 6,
-        parentId: -1,
+        id: 7,
+        parentId: 1,
         title: 'Desenvolvimento com Testes',
         start: new Date('2022-05-30'),
         end: new Date('2022-06-04'),
         progress: 0,
+        taskColor: 'red'
       },
       {
-        id: 7,
-        parentId: 6,
+        id: 8,
+        parentId: 7,
         title: 'Desenvolvimento dos módulos',
         start: new Date('2022-05-30'),
         end: new Date('2022-06-04'),
         progress: 0,
+        taskColor: 'red'
       },
       {
-        id: 8,
-        parentId: 6,
+        id: 9,
+        parentId: 7,
         title: 'Testes',
         start: new Date('2022-05-30'),
         end: new Date('2022-06-04'),
         progress: 0,
+        taskColor: 'red'
       },
       {
-        id: 9,
-        parentId: -1,
+        id: 10,
+        parentId: 1,
         title: 'Correção de Erros',
         start: new Date('2022-05-30'),
         end: new Date('2022-06-04'),
         progress: 0,
+        taskColor: 'red'
       },
       {
-        id: 10,
-        parentId: -1,
+        id: 11,
+        parentId: 1,
         title: 'Planejamento de Sprints',
         start: new Date('2022-05-30'),
         end: new Date('2022-06-04'),
         progress: 0,
+        taskColor: 'red'
       },
       {
-        id: 11,
-        parentId: 10,
+        id: 12,
+        parentId: 11,
         title: 'Módulo de Administração',
         start: new Date('2022-05-30'),
         end: new Date('2022-06-04'),
         progress: 0,
+        taskColor: 'red'
       },
       {
-        id: 12,
-        parentId: 10,
+        id: 13,
+        parentId: 11,
         title: 'Módulo de Produtos',
         start: new Date('2022-05-30'),
         end: new Date('2022-06-04'),
         progress: 0,
+        taskColor: 'red'
       },
       {
-        id: 13,
-        parentId: 10,
+        id: 14,
+        parentId: 11,
         title: 'Módulo de Compras',
         start: new Date('2022-05-30'),
         end: new Date('2022-06-04'),
         progress: 0,
+        taskColor: 'red'
       },
     ];
 

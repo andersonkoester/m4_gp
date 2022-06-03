@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { locale } from 'devextreme/localization';
 import { AppInfoService } from './shared/services';
+import config from 'devextreme/core/config';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +10,8 @@ import { AppInfoService } from './shared/services';
 })
 export class AppComponent  {
 
-  constructor(public appInfo: AppInfoService) { }
+  constructor(public appInfo: AppInfoService) {
+    locale('pt-BR');
+    config({ defaultCurrency: 'BRL' });
+  }
 }
