@@ -1,33 +1,33 @@
-<dx-gantt taskListWidth="500" scaleType="weeks" height="700">
-  <!-- <dxo-tasks [dataSource]="tasks"></dxo-tasks>
-  <dxo-dependencies [dataSource]="dependencies"></dxo-dependencies>
-  <dxo-resources [dataSource]="resources"></dxo-resources>
+<!-- <ng-template #container></ng-template> -->
+<dx-gantt #ganttComponent taskListWidth="500" scaleType="weeks" height="700">
+  <dxo-tasks
+    [dataSource]="tasks"
+    keyExpr="id"
+    parentIdExpr="parentTaskId"
+    titleExpr="taskTitle"
+    startExpr="startDate"
+    endExpr="endDate"></dxo-tasks>
+
+  <dxo-dependencies
+    [dataSource]="dependencies"
+    keyExpr="id"
+    typeExpr="dependencyType"
+    predecessorIdExpr="predecessorId"
+    successorIdExpr="successorId"></dxo-dependencies>
+  <dxo-resources
+    [dataSource]="resources"
+    keyExpr="id"
+    textExpr="text"></dxo-resources>
   <dxo-resource-assignments
     [dataSource]="resourceAssignments"
-  ></dxo-resource-assignments>
+    keyExpr="id"
+    resourceIdExpr="resourceId"
+    taskIdExpr="taskId"></dxo-resource-assignments>
 
-  <dxi-column dataField="title" caption="Subject" [width]="300"></dxi-column>
-  <dxi-column
-    dataField="start"
-    caption="Start Date"
-    dataType="date"
-  ></dxi-column>
-  <dxi-column dataField="end" caption="End Date" dataType="date"></dxi-column>
+  <dxi-column dataField="title" caption="Tarefa" [width]="300"></dxi-column>
+  <dxi-column dataField="start" caption="Inicio" dataType="date"></dxi-column>
+  <dxi-column dataField="end" caption="Fim" dataType="date"></dxi-column>
 
-  <dxo-toolbar>
-    <dxi-item name="undo"></dxi-item>
-    <dxi-item name="redo"></dxi-item>
-    <dxi-item name="separator"></dxi-item>
-    <dxi-item name="collapseAll"></dxi-item>
-    <dxi-item name="expandAll"></dxi-item>
-    <dxi-item name="separator"></dxi-item>
-    <dxi-item name="addTask"></dxi-item>
-    <dxi-item name="deleteTask"></dxi-item>
-    <dxi-item name="separator"></dxi-item>
-    <dxi-item name="zoomIn"></dxi-item>
-    <dxi-item name="zoomOut"></dxi-item>
-  </dxo-toolbar>
-
-  <dxo-validation [autoUpdateParentTasks]="true"></dxo-validation>
-  <dxo-editing [enabled]="true"></dxo-editing> -->
+  <dxo-validation [autoUpdateParentTasks]="false"></dxo-validation>
+  <dxo-editing [enabled]="false"></dxo-editing>
 </dx-gantt>

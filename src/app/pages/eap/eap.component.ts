@@ -17,24 +17,19 @@ export class EAPComponent {
         Title: 'E-Commerce',
         Items: [
           {
-            Title: 'Gestão do Projeto',
-            Items : [
-              {
-                Title: 'Planejamento',
-              }
-            ]
+            Title: 'Gestão do Projeto'
           },
           {
             Title: 'Requisitos',
             Items : [
               {
-                Title: 'Software',
-              },
-              {
-                Title: 'Documentação do Usuário',
+                Title: 'Levantamento de Requisitos',
               },
               {
                 Title: 'Análise de Requisitos',
+              },
+              {
+                Title: 'Documentação de Requisitos',
               }
             ]
           },
@@ -42,47 +37,27 @@ export class EAPComponent {
             Title: 'Desenvolvimento com Testes',
             Items : [
               {
-                Title: 'Demanda de Desenvolvimento',
+                Title: 'Desenvolvimento dos módulos',
               },
               {
-                Title: 'Teste de Desenvolvimento',
-              },
-              {
-                Title: 'Teste Operacional',
+                Title: 'Testes',
               }
             ]
           },
           {
-            Title: 'Correção de Erros',
-            Items : [
-              {
-                Title: 'Estimativa de resolução',
-              },
-              {
-                Title: 'Relatório do erro',
-              },
-              {
-                Title: 'Relatório de correção',
-              }
-            ]
+            Title: 'Correção de Erros'
           },
           {
             Title: 'Planejamento de Sprints',
             Items : [
               {
-                Title: 'Planejamento',
+                Title: 'Módulo de Administração',
               },
               {
-                Title: 'Implementação',
+                Title: 'Módulo de Produtos',
               },
               {
-                Title: 'Revisão',
-              },
-              {
-                Title: 'Retrospectiva',
-              },
-              {
-                Title: 'Lançamento',
+                Title: 'Módulo de Compras',
               }
             ]
           }
