@@ -1,0 +1,9 @@
+#orcamento-container{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  div{
+    &:first-child{width: 40%;}
+    &:last-child{width: 60%;}
+  }
+}

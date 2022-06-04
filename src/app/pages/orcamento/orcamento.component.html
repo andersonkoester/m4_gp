@@ -1,0 +1,41 @@
+<h2 class="content-block">Orçamento do Projeto</h2>
+<div class="content-block">
+  <div id="orcamento-container" class="dx-card responsive-paddings">
+    <div>
+      <dx-data-grid
+        id="datagrid"
+        [dataSource]="datasource">
+        <dxi-column
+          alignment="left"
+          dataField="text"
+          caption="Resumo"></dxi-column>
+        <dxi-column
+          alignment="right"
+          dataField="value"
+          caption="Valor"></dxi-column>
+      </dx-data-grid>
+    </div>
+    <div>
+      <dx-data-grid
+        id="datagrid"
+        [dataSource]="datasourceRecursos">
+        <dxi-column
+            alignment="left"
+            dataField="text"
+            caption="Recurso"></dxi-column>
+        <dxi-column
+          alignment="center"
+          dataField="tasks"
+          caption="Tarefas"></dxi-column>
+        <dxi-column
+          alignment="center"
+          dataField="perHour"
+          caption="Valor/Hora"></dxi-column>
+        <dxi-column
+          alignment="center"
+          dataField="total"
+          caption="Total"></dxi-column>
+      </dx-data-grid>
+    </div>
+  </div>
+</div>
